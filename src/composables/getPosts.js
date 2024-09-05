@@ -1,18 +1,17 @@
 import { ref } from "vue";
 
-const gePosts = () => {
+const getPosts = () => {
   const posts = ref([]);
   const error = ref(null);
 
   const load = async () => {
     try {
-      let data = await fetch("http://localhost:3000/post");
+      let data = await fetch("http://localhost:3000/posts");
       if (!data.ok) {
         throw Error("no data");
       }
       const parseddata = await data.json();
       posts.value = parseddata;
-      console.log(posts.value);
     } catch (err) {
       error.value = err.message;
     }

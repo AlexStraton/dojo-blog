@@ -1,15 +1,22 @@
 <template>
   <div>
     <h1>Details Page</h1>
-    <p>Showing details for post ID: {{ id }}</p>
+    <h3>{{ post.title }}</h3>
+    <div>{{ post.body }}</div>
   </div>
 </template>
 
 <script>
+import getPost from "@/composables/getPost";
+
 export default {
   props: ["id"],
   setup(props) {
-    console.log(props.id);
+    const { post, error, load } = getPost(props.id);
+
+    load();
+
+    return { post, error };
   },
 };
 </script>

@@ -12,6 +12,7 @@ export default {};
   width: 40px;
   height: 40px;
   margin: 30px auto;
+  border: 6px solid #747171;
   border-radius: 50%;
   border-top-color: black;
 }

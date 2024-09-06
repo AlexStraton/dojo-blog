@@ -1,12 +1,12 @@
 <template>
   <h2 class="header">Create</h2>
-  <form>
+  <form @submit.prevent="handleSubmit">
     <label> Title: </label>
     <input v-model="title" required />
     <label> Content: </label>
     <textarea v-model="content" required />
     <label> Tags (hit enter to add a tag): </label>
-    <input @keydown.enter.prevent="addTag" v-model="tag" required />
+    <input @keydown.enter.prevent="addTag" v-model="tag" />
     <div v-for="tag in tags" :key="tag" class="tag">#{{ tag }}</div>
     <button>Add Post</button>
   </form>
@@ -27,8 +27,25 @@ export default {
       }
       tag.value = "";
     }
-
-    return { title, content, tags, tag, addTag };
+    async function handleSubmit() {
+      try {
+        const response = await fetch("http://localhost:3000/posts", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            title: title.value,
+            content: content.value,
+            tags: tags.value,
+          }),
+        });
+      } catch (error) {
+        console.log(error);
+      }
+      //   title.value = "";
+      //   content.value = "";
+      //   tag.value = "";
+    }
+    return { title, content, tags, tag, addTag, handleSubmit };
   },
 };
 </script>

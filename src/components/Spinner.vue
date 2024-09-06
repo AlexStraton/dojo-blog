@@ -15,5 +15,12 @@ export default {};
   border: 6px solid #747171;
   border-radius: 50%;
   border-top-color: black;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 </style>

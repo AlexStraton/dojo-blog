@@ -5,7 +5,6 @@ const getPost = (id) => {
   const error = ref(null);
 
   const load = async () => {
-    console.log(id, "getPost function");
     try {
       const blogPost = await fetch("http://localhost:3000/posts/" + id);
       if (!blogPost.ok) {

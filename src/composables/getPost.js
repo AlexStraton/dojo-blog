@@ -12,7 +12,7 @@ const getPost = (id) => {
       }
       const data = await blogPost.json();
       post.value = data;
-      console.log(post.value);
+      console.log(post.value, "post value");
     } catch (err) {
       error.value = err.message;
     }

@@ -4,7 +4,7 @@
     <label> Title: </label>
     <input v-model="title" required />
     <label> Content: </label>
-    <textarea v-model="content" required />
+    <textarea v-model="body" required />
     <label> Tags (hit enter to add a tag): </label>
     <input @keydown.enter.prevent="addTag" v-model="tag" />
     <div v-for="tag in tags" :key="tag" class="tag">#{{ tag }}</div>
@@ -17,7 +17,7 @@ import { ref } from "vue";
 export default {
   setup() {
     const title = ref("");
-    const content = ref("");
+    const body = ref("");
     const tag = ref("");
     const tags = ref([]);
 
@@ -34,7 +34,7 @@ export default {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             title: title.value,
-            content: content.value,
+            body: body.value,
             tags: tags.value,
           }),
         });
@@ -42,10 +42,10 @@ export default {
         console.log(error);
       }
       title.value = "";
-      content.value = "";
+      body.value = "";
       tag.value = "";
     }
-    return { title, content, tags, tag, addTag, handleSubmit };
+    return { title, body, tags, tag, addTag, handleSubmit };
   },
 };
 </script>

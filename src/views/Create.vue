@@ -29,7 +29,7 @@ export default {
     }
     async function handleSubmit() {
       try {
-        const response = await fetch("http://localhost:3000/posts", {
+        await fetch("http://localhost:3000/posts", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -41,9 +41,9 @@ export default {
       } catch (error) {
         console.log(error);
       }
-      //   title.value = "";
-      //   content.value = "";
-      //   tag.value = "";
+      title.value = "";
+      content.value = "";
+      tag.value = "";
     }
     return { title, content, tags, tag, addTag, handleSubmit };
   },

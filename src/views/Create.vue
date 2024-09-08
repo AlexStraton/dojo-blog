@@ -14,12 +14,15 @@
 
 <script>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
 export default {
   setup() {
     const title = ref("");
     const body = ref("");
     const tag = ref("");
     const tags = ref([]);
+
+    const router = useRouter();
 
     function addTag() {
       if (!tags.value.includes(tag.value)) {
@@ -38,6 +41,7 @@ export default {
             tags: tags.value,
           }),
         });
+        router.push({ name: "home" });
       } catch (error) {
         console.log(error);
       }

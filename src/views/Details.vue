@@ -1,9 +1,9 @@
 <template>
   <div>
     <h1>Details Page</h1>
-    <div v-if="post">
+    <div v-if="post" class="post">
       <h3>{{ post.title }}</h3>
-      <div>{{ post.body }}</div>
+      <p class="pre">{{ post.body }}</p>
     </div>
     <div v-else>
       <Spinner />
@@ -27,4 +27,17 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.post {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.post p {
+  color: #444;
+  line-height: 1.5em;
+  margin-top: 40px;
+}
+.pre {
+  white-space: pre-wrap;
+}
+</style>

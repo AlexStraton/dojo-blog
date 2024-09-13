@@ -4,62 +4,13 @@
       "id": "1",
       "title": "welcome to the new blog",
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "tags": [
-        "webdev",
-        "coding",
-        "news"
-      ]
+      "tags": ["webdev", "coding", "news"]
     },
     {
       "id": "2",
       "title": "top 5 CSS tips",
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "tags": [
-        "css",
-        "webdev",
-        "coding"
-      ]
-    },
-    {
-      "id": "504b",
-      "title": "Test ",
-      "body": "",
-      "tags": [
-        "css",
-        "html"
-      ]
-    },
-    {
-      "id": "e314",
-      "title": "dgvdaegt",
-      "body": "grzerg",
-      "tags": [
-        "dfs"
-      ]
-    },
-    {
-      "id": "e354",
-      "title": "gsdae",
-      "body": "shrdzehyserhyz",
-      "tags": [
-        "ghh"
-      ]
-    },
-    {
-      "id": "50d9",
-      "title": "test ",
-      "body": "sfdfs",
-      "tags": [
-        "afds"
-      ]
-    },
-    {
-      "id": "8280",
-      "title": "bdhzthr",
-      "body": "xtjrxujtsxr",
-      "tags": [
-        "xrhzteyh"
-      ]
+      "tags": ["css", "webdev", "coding"]
     }
   ]
 }

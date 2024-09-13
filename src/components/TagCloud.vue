@@ -1,7 +1,9 @@
 <template>
   <div class="tag-cloud">
-    <h3>Tags</h3>
-    <h3>Click each tag to see all the articles associated with it!</h3>
+    <h3><span>Tags</span></h3>
+    <h3>
+      <span>Click each tag to see all the articles associated with it!</span>
+    </h3>
 
     <div class="tags">
       <div v-for="tag in tags" :key="tag">
@@ -37,24 +39,27 @@ export default {
 }
 
 .tag-cloud h3 {
-  display: inline-block;
-  position: relative;
   font-size: 20px;
   color: white;
   margin-bottom: 10px;
 }
-.tag-cloud h3::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: #1f52fa;
 
+.tag-cloud h3 span {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+.tag-cloud h3 span::before {
+  content: "";
   position: absolute;
-  z-index: -1;
-  padding-right: 40px;
-  left: -30px;
+  top: 0;
+  left: 0;
+  width: 120%;
+  height: 120%;
+  background: #1f52fa;
   transform: rotateZ(-1deg);
+  transform-origin: left top;
+  z-index: -1;
 }
 .tag-cloud div {
   display: inline-block;
